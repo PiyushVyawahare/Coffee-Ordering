@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftguidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightguidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/name1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toRightOf="@id/name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/e_mail1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/xyz_gmail_com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintLeft_toRightOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="15dp" />
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintRight_toLeftOf="@id/rightguidline" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/Quantity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/green"
+        android:onClick="increaseQuantity"
+        android:text="@string/plus"
+        app:layout_constraintRight_toRightOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/_1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintRight_toLeftOf="@id/plus"
+        app:layout_constraintTop_toTopOf="@id/quantity" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:backgroundTint="@color/red"
+        android:onClick="decreaseQuantity"
+        android:text="@string/minus"
+        app:layout_constraintRight_toLeftOf="@id/value"
+        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintRight_toLeftOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/price" />
+
+    <TextView
+        android:id="@+id/price_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/coffee_price"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/quantity" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/u20b9100"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/value" />
+
+
+
+
+
+
+
+
+
+    <CheckBox
+        android:id="@+id/wheepCream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:textSize="15sp"
+        android:text="@string/wheep_cream"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="290dp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        android:layout_marginTop="15dp"
+        android:onClick="addWheepCream"/>
+    <TextView
+        android:id="@+id/wheepPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/u20b910"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/line2"/>
+
+    <CheckBox
+        android:id="@+id/chocolate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:textSize="15sp"
+        android:text="@string/chocolate"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="290dp"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/wheepCream"
+        android:onClick="addChocolate"/>
+    <TextView
+        android:id="@+id/chocolatePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/u20b9201"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/wheepPrice"/>
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintRight_toLeftOf="@id/rightguidline"
+        app:layout_constraintTop_toBottomOf="@id/chocolate" />
+
+    <Button
+        android:id="@+id/viewOrderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardview_light_background"
+        android:fontFamily="sans-serif-condensed-light"
+        android:onClick="ViewOrderSummary"
+        android:text="@string/view_order_summary"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintTop_toBottomOf="@id/line3" />
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewOrderSummary"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/total_price"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline"
+        app:layout_constraintRight_toLeftOf="@id/rightguidline" />
+
+    <TextView
+        android:id="@+id/total_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/total_price"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/order"
+        app:layout_constraintLeft_toRightOf="@id/leftguidline" />
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/u20b9100"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/order"
+        app:layout_constraintRight_toLeftOf="@id/rightguidline" />
+
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="@string/order"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="placeOrder"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
