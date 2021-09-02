@@ -10,7 +10,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 public var count: Int = 1
 public var price1: Int = 100
@@ -29,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val total_price = findViewById<TextView>(R.id.total_price)
         value.setText(""+count)
         total_price.setText("\u20b9"+""+ price1)
+        ViewOrderSummary()
     }
 
     fun increaseQuantity(view: View) {
@@ -41,24 +41,29 @@ class MainActivity : AppCompatActivity() {
 
         value.setText(""+count)
         total_price.setText("\u20b9"+ price1)
+        ViewOrderSummary()
     }
 
     fun decreaseQuantity(view: View) {
         count--
-        price1 -= 100
-        if(c1)
-            price1 -= wprice
-        if(c2)
-            price1 -= cprice
-        if (count != 0) {
-            value.setText("" + count)
-            total_price.setText("\u20b9"+"" + price1)
+        if (count>=1) {
+            price1 -= 100
+            if (c1)
+                price1 -= wprice
+            if (c2)
+                price1 -= cprice
+            if (count != 0) {
+                value.setText("" + count)
+                total_price.setText("\u20b9" + "" + price1)
+            }
         }
         else {
+            count++
             Toast.makeText(this, "Select at least one coffee.", Toast.LENGTH_LONG).show()
             value.setText("" + count)
             total_price.setText("\u20b9"+"" + price1)
         }
+        ViewOrderSummary()
     }
 
     fun addWheepCream(view: View) {
@@ -76,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                 total_price.setText("\u20b9"+ price1)
             }
         }
+        ViewOrderSummary()
     }
 
     fun addChocolate(view: View) {
@@ -93,6 +99,7 @@ class MainActivity : AppCompatActivity() {
                 total_price.setText("\u20b9"+ price1)
             }
         }
+        ViewOrderSummary()
     }
 
     private fun sendEmail(recipient: String, subject: String, message: String) {
@@ -147,7 +154,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Please fill all details!", Toast.LENGTH_LONG).show()
     }
 
-    fun ViewOrderSummary(view: View) {
+    fun ViewOrderSummary() {
         val nameInput = findViewById<EditText>(R.id.nameInput)
         val emailInput = findViewById<EditText>(R.id.emailInput)
         val wheepCream = findViewById<CheckBox>(R.id.wheepCream)
